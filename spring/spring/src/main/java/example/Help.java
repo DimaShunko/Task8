@@ -1,9 +1,15 @@
 package example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Set;
 
 @Component
 public class Help implements Command{
+    @Autowired
+    private Set<Command> commands;
+
 
     @Override
     public String getName() {
@@ -13,7 +19,7 @@ public class Help implements Command{
     @Override
     public String exec() {
         String s = "";
-        for (Command com: ShellManager.getCommands()){
+        for (Command com: commands){
             s = s + com.help()+'\n';
         }
         return s;
