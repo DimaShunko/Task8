@@ -3,10 +3,7 @@ package example;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -14,8 +11,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Controller
-public class ShellManager{
+public class ShellManager {
     @Autowired
     private Date date;
     @Autowired
@@ -46,7 +42,6 @@ public class ShellManager{
             }
         }
     }
-
 
     public static List<Command> getCommands() {
         return commands;

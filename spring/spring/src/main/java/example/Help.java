@@ -14,7 +14,6 @@ public class Help implements Command{
     public String exec() {
         String s = "";
         for (Command com: ShellManager.getCommands()){
-            //System.out.println(com.help());
             s = s + com.help()+'\n';
         }
         return s;
